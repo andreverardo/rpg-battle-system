@@ -3,20 +3,25 @@
 Sistema de batalha por turnos desenvolvido em **Java**, focado na aplicação prática dos princípios de **Programação Orientada a Objetos (POO)** e boas práticas de código.
 
 ## 🎯 Objetivo do Projeto
-Demonstrar a implementação dos pilares da orientação a objetos através de uma mecânica de combate RPG executada no terminal, garantindo um código modular e de fácil manutenção.
+Demonstrar a implementação dos pilares da orientação a objetos através de uma mecânica de combate RPG executada via console/terminal, garantindo um código modular, desacoplado e de fácil manutenção.
 
 ## ⚙️ Conceitos de POO Aplicados
-- **Abstração e Herança:** Estruturação de classes base para personagens e habilidades.
-- **Polimorfismo:** Implementação de comportamentos específicos para cada tipo de personagem/classe.
-- **Encapsulamento:** Proteção de estados internos e atributos.
-- **Enumeradores (Enum):** Modelagem de atributos e tipos com atributos e construtores personalizados.
+- **Abstração e Herança:** Classe base para entidade/personagem estendida pelas classes específicas (Cavaleiro, Assassino, etc.).
+- **Polimorfismo:** Sobrescrita de métodos de ataque para definir comportamentos e armas exclusivas de cada classe.
+- **Encapsulamento:** Proteção de atributos de estado (vida, ataque, defesa) com métodos de acesso controlados.
+- **Enumeradores (Enum):** Mapeamento de classes de personagens, tipos de ataque e armas com atributos próprios.
 
 ## 🚀 Tecnologias Utilizadas
 - **Linguagem:** Java (SE)
-- **Paradigma:** Orientação a Objetos (sem uso de frameworks externos)
+- **Paradigma:** Orientação a Objetos (sem uso de frameworks/dependências externas)
 
-## 📌 Funcionalidades
-- [x] Criação de diferentes tipos de personagens.
-- [x] Sistema de turnos de ataque e defesa.
-- [ ] Cálculo de dano dinâmico baseado na classe (Em desenvolvimento).
+## 📌 Funcionalidades (Em Desenvolvimento)
+- [ ] **Criação de Personagem via Console:** Entrada do nome do jogador e seleção da classe através do terminal.
+- [ ] **Sorteio Aleatório de Oponente:** Sistema de pareamento automático contra um inimigo gerado pelo jogo.
+- [ ] **Ataques Específicos por Classe:** Mecânica de combate onde a arma e a ação dependem da classe escolhida (ex: Cavaleiro ataca com Espada, Assassino utiliza Adaga).
+- [ ] **Sistema de Batalha por Turnos:** Alternância interativa de ações de ataque, defesa e cálculo dinâmico de dano.
 
+## 💻 Como Executar o Projeto
+
+1. Abra a pasta `rpg-battle-system` na sua IDE Java de preferência (IntelliJ IDEA, Eclipse ou VS Code).
+2. Execute a classe principal do projeto através da IDE.
