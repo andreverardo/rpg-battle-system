@@ -1,4 +1,4 @@
-package com.andreverardo.rpgbattle;
+package com.andreverardo.rpgbattle.characters;
 
 public enum CharacterClass {
     HUNTER("Caçador"),
@@ -8,9 +8,7 @@ public enum CharacterClass {
 
     private final String displayName;
 
-
     CharacterClass(String displayName) {
-
         this.displayName = displayName;
     }
 

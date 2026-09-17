@@ -1,4 +1,4 @@
-package com.andreverardo.rpgbattle;
+package com.andreverardo.rpgbattle.characters;
 
 import java.util.Random;
 
