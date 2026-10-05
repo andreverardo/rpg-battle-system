@@ -1,5 +1,7 @@
 package com.andreverardo.rpgbattle.characters;
 
+import com.andreverardo.rpgbattle.weapons.Weapon;
+
 import java.util.Random;
 
 public abstract class Character {
@@ -7,18 +9,20 @@ public abstract class Character {
     private double currentHealth;
     private double maxHealth;
     private boolean isDefending;
+    private Weapon weapon;
 
     private CharacterClass characterClass;
 
     public abstract void attack(Character target);
 
-    public Character(double currentHealth, String name, double maxHealth, CharacterClass characterClass) {
+    public Character(double currentHealth, String name, double maxHealth, CharacterClass characterClass, Weapon weapon) {
         this.currentHealth = currentHealth;
         this.name = name;
         this.maxHealth = maxHealth;
         this.characterClass = characterClass;
+        this.weapon = weapon;
     }
-
+    // checagem se o personagem está vivo ou não.
     public boolean isAlive(){
         if (currentHealth <= 0) {
             return false;
@@ -26,6 +30,8 @@ public abstract class Character {
             return true;
         }
     }
+
+    // randomização da defesa dos personagens.
     public boolean rollDefense(){
         Random rollDefense = new Random();
         boolean result = rollDefense.nextBoolean();
