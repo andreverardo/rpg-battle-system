@@ -15,7 +15,7 @@ public class EnemyFactory {
 
         switch (drawnClass) {
             case WARRIOR:
-                enemy = new Warrior(drawnClass.getDisplayName());
+                enemy = new Warrior();
                 break;
             case WIZARD:
                 enemy = new Wizard(drawnClass.getDisplayName());

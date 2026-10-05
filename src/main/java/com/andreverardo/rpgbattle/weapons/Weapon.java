@@ -3,20 +3,19 @@ package com.andreverardo.rpgbattle.weapons;
 import java.util.Random;
 
 public abstract class Weapon {
-    private String name;
-    private double minDamage;
-    private double maxDamage;
-    private Random random = new Random();
+    private final String name;
+    private final double minDamage;
+    private final double maxDamage;
+    private final Random random = new Random();
     
-    public Weapon(String name, double minDamage, double maxDamage) {
+    protected Weapon(String name, double minDamage, double maxDamage) {
         this.name = name;
         this.minDamage = minDamage;
         this.maxDamage = maxDamage;
     }
 
     public double rollDamage(){
-        double randomDamage = minDamage + random.nextDouble() * (maxDamage - minDamage);
-        return randomDamage;
+        return minDamage + random.nextDouble() * (maxDamage - minDamage);
     }
 
 
