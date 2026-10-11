@@ -8,8 +8,5 @@ public class Hunter extends Character {
         super(130, CharacterClass.HUNTER.getDisplayName(), 130, CharacterClass.HUNTER, new Handaxe());
     }
 
-    @Override
-    public void attack(Character target) {
-
-    }
+}
 

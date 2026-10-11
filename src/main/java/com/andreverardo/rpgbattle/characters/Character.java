@@ -3,18 +3,19 @@ package com.andreverardo.rpgbattle.characters;
 import com.andreverardo.rpgbattle.weapons.Weapon;
 
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public abstract class Character {
     private String name;
     private double currentHealth;
     private double maxHealth;
-    private boolean isDefending;
+    private static final double MIN_DEFENSE_MITIGATION = 0.4;
+    private static final double MAX_DEFENSE_MITIGATION = 0.7;
     private Weapon weapon;
-
     private CharacterClass characterClass;
 
-    public abstract void attack(Character target);
 
+    // Constructor da criação do personagem.
     public Character(double currentHealth, String name, double maxHealth, CharacterClass characterClass, Weapon weapon) {
         this.currentHealth = currentHealth;
         this.name = name;
@@ -22,7 +23,35 @@ public abstract class Character {
         this.characterClass = characterClass;
         this.weapon = weapon;
     }
-    // checagem se o personagem está vivo ou não.
+
+    // Metodo de atacar o oponente.
+    public void attack(Character target) {
+
+    }
+
+    // randomização da defesa dos personagens.
+    private boolean rollDefense(){
+        return ThreadLocalRandom.current().nextBoolean();
+    }
+
+    public void takeDamage(double damage){
+        // Descobrir se defendeu (true ou false) usando o metodo rollDefense
+        boolean defended = rollDefense();
+        if(defended){
+            damage = calculateDamageReduction(damage);
+
+        }
+        currentHealth -= damage;
+    }
+    // Calculo de redução de dano
+    public double calculateDamageReduction (double damage){
+        double mitigationRate = ThreadLocalRandom.current().nextDouble(MIN_DEFENSE_MITIGATION, MAX_DEFENSE_MITIGATION);
+        double reducedDamage = mitigationRate * damage;
+        return (damage - reducedDamage);
+    }
+
+
+    // Checagem se o personagem está vivo ou não.
     public boolean isAlive(){
         if (currentHealth <= 0) {
             return false;
@@ -31,12 +60,7 @@ public abstract class Character {
         }
     }
 
-    // randomização da defesa dos personagens.
-    public boolean rollDefense(){
-        Random rollDefense = new Random();
-        boolean result = rollDefense.nextBoolean();
-        return result;
-    }
+
 
     public String getName() {
         return name;
@@ -62,13 +86,6 @@ public abstract class Character {
         this.maxHealth = maxHealth;
     }
 
-    public boolean isDefending() {
-        return isDefending;
-    }
-
-    public void setIsDefending(boolean isDefending) {
-        this.isDefending = isDefending;
-    }
 
     public CharacterClass getcharacterClass() {
         return characterClass;
