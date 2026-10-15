@@ -26,7 +26,8 @@ public abstract class Character {
 
     // Metodo de atacar o oponente.
     public void attack(Character target) {
-
+       double damageDealt = this.weapon.rollDamage();
+        target.takeDamage(damageDealt);
     }
 
     // randomização da defesa dos personagens.
