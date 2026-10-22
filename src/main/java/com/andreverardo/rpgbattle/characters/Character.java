@@ -2,7 +2,6 @@ package com.andreverardo.rpgbattle.characters;
 
 import com.andreverardo.rpgbattle.weapons.Weapon;
 
-import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 public abstract class Character {

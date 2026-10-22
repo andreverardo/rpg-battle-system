@@ -18,13 +18,13 @@ public class EnemyFactory {
                 enemy = new Warrior();
                 break;
             case WIZARD:
-                enemy = new Wizard(drawnClass.getDisplayName());
+                enemy = new Wizard();
                 break;
             case HUNTER:
-                enemy = new Hunter(drawnClass.getDisplayName());
+                enemy = new Hunter();
                 break;
             case ASSASSIN:
-                enemy = new Assassin(drawnClass.getDisplayName());
+                enemy = new Assassin();
                 break;
                 default:
                     enemy = null;
